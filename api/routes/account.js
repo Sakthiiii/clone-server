@@ -3,7 +3,7 @@ import { authenticateToken } from './../middleware/authToken.js';
 import { registerValidations, loginValidations } from '../middleware/validations.js';
 import { register, login, getUser, updateProfilePicture } from '../controllers/account.js'; // import request & response function
 
-// initialize router
+
 const router = express.Router();
 
 router.post('/register',[...registerValidations], register);
