@@ -21,12 +21,12 @@ app.use(express.urlencoded({ limit: '1mb', extended: false }));
 app.use(morgan('dev')); 
 
 
-const MONGO_URI = "mongodb://localhost:27017/gmail";
+
 const DEPRECATED_FIX = { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true };
 
 // connect to db
 mongoose
-  .connect(MONGO_URI, DEPRECATED_FIX)
+  .connect(process.env.MONGO_URI, DEPRECATED_FIX)
   .catch((error) => console.log('❌ MongoDB connection error', error)); 
 
 const db = mongoose.connection;
@@ -48,7 +48,7 @@ if(process.env.NODE_ENV ==='production'){
   });
 }
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`✅ Server is listening on port: ${PORT}`);
+
+app.listen(process.env.PORT || 8080, () => {
+  console.log(" Server is listening on port 8080");
 });
