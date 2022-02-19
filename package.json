@@ -1,5 +1,5 @@
 {
-  "homepage": "https://arcane-inlet-86488.herokuapp.com/api/v1",
+  "homepage": "https://localhost:8080/api/v1",
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "predeploy": "npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  // arcane-inlet-86488
+ 
   "author": "Prashant",
   "license": "ISC",
   "dependencies": {
